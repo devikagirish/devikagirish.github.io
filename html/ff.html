@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>An intro to js</title>
+</head>
+<body>
+<p id="first">My first </p>
+<p id="operation">My first division of 20 and 5- 4: </p>
+first: <input type="text" id="input1"/> <br /><br />
+second: <input type="text" id="input2" /><br />
+<input type="submit" onclick="get()">
+<br />
+the addition is <h1 id="sample"></h1>
+<button onclick="gettime()">date current </button>
+<p id="getdate"></p>
+<p id="loop"></p>
+<script type="text/javascript">
+   var x = "JS programme";
+   console.log(x);
+   var y = document.getElementById("first").innerHTML;
+   console.log(y);
+   document.getElementById("first").innerHTML = y + " " + x;
+   var a = (9 + 5) / 8, b = 4;
+   var c = a + "5" +  b ;
+   console.log(5 === "5");
+   var simple = undefined;
+   console.log( typeof simple);
+   var str = "web workshop";
+   console.log(str.indexOf("wor"));  
+   var arr = ["hello", "this", "is", "first", "programme"];
+   var arr2 = [];
+   var arr1 = new Array(40);
+   arr1[0] = "iam";
+   console.log(arr.length);  
+ var a = 3,b=5;
+ c = "a + b";
+ if( typeof a == "number") {
+   console.log("equal");
+ } 
+ function myfunc(n1, n2) {
+   return n12 / n2;
+ }
+ var ab = document.getElementById("operation").innerHTML;
+ var cd =  document.getElementById("operation").innerHTML = ab + " of 20 and 5 - " + myfunc(20,5);
+function get() {
+ var input = Number(document.getElementById("input1").value);
+ var input2 = Number(document.getElementById("input2").value);
+ document.getElementById("sample").innerHTML = input + input2;
+}
+function gettime()
+{
+var d=new Date();
+document.getElementById("getdate").innerHTML = d;
+}
+     var arr=["hello" , "this" , "is" , "first" , "programme" , "andalso" , "blabla"];
+     for(x in arr) {
+      if(andalso[x] == "andalso")
+         var ab= document.getElementById("loop").innerHTML;
+      var cd= document.getElementById("loop").innerHTML = ab + " "+arr[x];
+     }
+
+      </script>
+ </body>
+</html>

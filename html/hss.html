@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>hello</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+ var some = angular.module("first_module", []);
+ some.controller("first_controller", function($scope){
+   $scope.myname = "Lal";
+   $scope.club = "FOSS@amrita";
+   var students = [
+   {'name' : 'Thunji Mooppan','id'   : '333' , 'class': 's2' , 'fee' : '4567' , 'school' : 'thall school' , 'points': '0'}
+         {'name' : 'Thunji vikram','id'   : '33' , 'class': 's2' , 'fee' : '33333' , 'school' : 'thall school' , 'points':'0.19'}
+         {'name' : 'Mooppan','id'   : '3' , 'class': 's1' , 'fee' : '467' , 'school' : 'thallist school' , 'points': '5'}
+         {'name' : 'thunji kiran','id'   : '657' , 'class': 's7' , 'fee' : '456777' , 'school' : ' amrita' , 'points': '90'}
+         {'name' : 'Thunji alokh','id'   : '33369' , 'class': 's9' , 'fee' : '4567677' , 'school' : ' durga' , 'points': '67'}
+         {'name' : 'Thunji goutham','id'   : '334643' , 'class': 's5' , 'fee' : '456467' , 'school' : 'sentry ' , 'points': '68'}
+         ];
+   $scope.students = students;
+ });
+ some.controller("second_controller", function($scope) {
+     $scope.value = "angular";
+ });</script>
+</head>
+<body ng-app ="first_module">
+<p> My first angular code </p>
+<div ng-controller = "first_controller">
+ 30 + 40 = {{ 30 + 40 }}
+ <p> Name is = {{myname}}</p>
+ <p> club ={{club}}</p>
+ <p> thunjiis                   details</p> 
+  <p> name: {{student.name}}</p>
+ <p> id ={{student.id}}</p>
+ <p> class ={{student.class}}</p>
+<table border="1">
+   <thread>
+   <tr>
+      <th>s.no</th>
+      <th>name</th>
+      <th>class</th>
+      <th>fee</th>
+      <th>school</th>
+      <th>points</th>
+   </tr>
+   </thread>
+   <tbody>
+      <tr ng-repeat="student in students">
+      <td>{{$index + 1}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.class}}</td>
+      <td>{{student.fee}}</td>
+      <td>{{student.school}}</td>
+      <td>{{student.points}}</td>
+      </tr>
+   </tbody>
+</table>
+
+ </div>
+ <div ng-controller="second_controller">
+<input type="text" ng-model="value">
+   <p>{{ value }} </p>
+ </div></body>
+</html>

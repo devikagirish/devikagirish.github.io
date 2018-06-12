@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>An intro to js</title>
+</head>
+<body>
+<p id="first">my first js programme</p>
+<p id="operation">My first division: </p>
+first: <input type="text" id="input1"/> <br /><br />
+second: <input type="text" id="input2" /><br />
+<input type="submit" onclick="get()">
+<br />
+the addition is <h1 id="sample"></h1>
+<script type="text/javascript">
+   var x = "JS programme";
+   console.log(x);
+   var y=document.getElementById("first").innerHTML = y + " " + x;
+   document.getElementById("first") innerHTML = x;
+   var a = (9 + 5) / 8, b = 4;
+   var c = a + "5" +  b ;
+   console.log(5 === "5");
+   var simple = undefined;
+   console.log( typeof simple);
+   var str = "web workshop";
+   console.log(str.indexOf("wor"));    
+   var arr = ["hello", "this", "is", "first", "programme"];
+   var arr1 = new Array(40);
+   arr1[0] = "iam";
+   console.log(arr.length);
+   var a=3,b=5;
+   c="a+b";
+   if(typeof c=="number") {
+      console.log("equal");
+   }
+
+   function myfun(n1, n2) {
+      return n1 / n2;
+   }
+   var ab = document.getElementById("operation").innerHTML;
+   var cd = document.getElementById("operation").innerHTML=ab + " of 20 and 5 - "+myfun(20,5);
+   function get() {
+ var input = Number(document.getElementById("input1").value);
+ var input2 = Number(document.getElementById("input2").value);
+ document.getElementById("sample").innerHTML = input1+ input2;
+}
+   
+ </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+h1 {
+	font-size:200px;
+	color:white;
+
+}
+body{
+	background-color:rgba(0,120,255,0.5);
+	background-image:url('/home/examuser/bored-cat.jpg');
+	background-repeat:no-repeat;
+	background-position:right;
+	background-attachment: fixed;
+	background-size:cover;
+}
+  img{
+  	opacity:0.5;
+  }
+#work1
+{
+	color:red;
+	border-style:dotted yellow
+	border-width:3px;
+	border-bottom: 3px solid red;
+	border-top:3px solid yellow;
+	bottom-right:3px solid red;
+	bottom-left:3px solid black;
+	border-radius:75px;
+	max-width: 30%;
+}
+#sample{
+	font-size:50px;
+	color:#f1f1f1;
+	text-indent: 40%;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	text-shadow: 2px 2px blue;
+}
+on-hover{
+    background-color: yellow;
+}
+
+.work{
+	color:pink;
+	border-style:dotted yellow
+	border-width:3px;
+	border-bottom: 3px solid red;
+	border-top:3px solid yellow;
+	bottom-right:3px solid red;
+	bottom-left:3px solid black;
+	border-radius:75px;
+	max-width:30%;
+	
+ }
+ h1{
+ 	font-size:150px;
+ 	color:blue;
+ 	border-style:dotted yellow
+	border-width:3px;
+	border-bottom: 3px solid red;
+	border-top:3px solid yellow;
+	bottom-right:3px solid red;
+	bottom-left:3px solid black;
+	border-radius:75px;
+ }
+ .x.hover;
+ {
+ 	opacity:0.5;
+ }

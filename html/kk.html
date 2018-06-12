@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+var some = angular.module("first_module", [])
+                .controller("first_controller", function($scope, $http, $log) {
+                console.log("also here");
+       $http.get('http://codeforces.com/api/user.status?handle=tourist&from=1&count=100').then(function(response) {
+                       console.log(response);
+                       $scope.students = response.data.result;
+                       console.log($scope.students);
+           }, function(err){
+                   console.log("ram");
+                   console.log(err);
+               });
+               console.log("entered here");
+});
+</script><body  ng-app="first_module"><div ng-controller="first_controller">
+<table border="1" style="width: 60%;">
+    <thead>
+        <tr>
+            <th> S.No </th>
+            <th>Id</th>
+            <th>ContestId</th>
+            <th>Problem name</th>
+            <th>Creation time</th>
+            <th> corectness</th>
+            <th>type</th>
+            <th>relativeTimeSecond</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="student in students | filter: filt">
+            <td> {{$index + 1}} </td>
+            <td> {{ student.id }} </td>
+            <td> {{ student.contestId }} </td>
+            <td> {{ student.problem.name }} </td>
+            <td> {{student.creationTimeSeconds }} </td>
+            <td> {{student.verdict }} </td>
+            <td>{{student.problem.type}}</td>
+            <td>{{student.relativeTimeSeconds}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+<br />
+<input type="text" ng-model="filt.id"></div>
+</body>
+</html>

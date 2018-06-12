@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+var some = angular.module("first_module", [])
+                .controller("first_controller", function($scope) {
+       var students = [
+           { 'name': 'john', 'class': '6', 'fee': '45000', 'school': 'amrita', 'point': '0' },
+           { 'name': 'ahmed', 'class': '7', 'fee': '55000', 'school': 'delhi public', 'point': '0' },
+           { 'name': 'ram', 'class': '7', 'fee': '65000', 'school': 'trinity', 'point': '0' },
+           { 'name': 'krishna', 'class': '8', 'fee': '75000', 'school': 'narayana', 'point': '0' },
+           { 'name': 'shahil', 'class': '9', 'fee': '85000', 'school': 'sri chaitanya', 'point': '0' },
+           { 'name': 'vamshi', 'class': '10', 'fee': '95000', 'school': 'FItJEE', 'point': '0' },
+           ];
+           
+       $scope.students = students;
+       $scope.increment = function( student ) {
+           student.point++;
+       }
+       $scope.decrement = function( student ) {
+           if (student.point > 0) {
+               student.point--;
+           }
+       }
+       $scope.winner = "not decided yet";
+       $scope.getmaxpoint = function() {
+           var maxv = students[0].point;
+           angular.forEach( students, function( student, key ) {
+           
+               if(student.point >= maxv ) {
+                   maxv = student.point;
+                   $scope.winner = student.name;
+               }
+           });
+       }
+});
+</script><body  ng-app="first_module"><div ng-controller="first_controller">
+<table border="1" style="width: 40%;">
+    <thead>
+        <tr>
+            <th> S.No </th>
+            <th>Name</th>
+            <th>class</th>
+            <th>fee</th>
+            <th>school</th>
+            <th> point</th>
+            <th>change point </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="student in students | orderBy : class : false">
+            <td> {{$index + 1}} </td>
+            <td> {{ student.name }} </td>
+            <td> {{student.class}} </td>
+            <td> {{ student.fee}} </td>
+            <td> {{student.school}} </td>
+            <td> {{ student.point }} </td>
+            <td><p ng-mouseover ="increment(student)">increment
+   </p>
+   <p ng-mouseover ="decrement(student)">decrement</p>
+   </td> 
+        </tr>
+    </tbody>
+</table>
+<br />
+Select student:
+    <input typ="text" ng-model="disp"><br /><br />
+The sudent name is
+{{ students[disp-1].name }}
+<br /><br />
+<input type="button" value="get winner" ng-click="getmaxpoint()">
+<br /><br />
+Winner of the competetion is: {{ winner }}
+</div>
+</body>
+</html>
